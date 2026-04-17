@@ -17,10 +17,7 @@ export default function About() {
           {/* Photo */}
           <div className={styles.photoWrap}>
             <div className={styles.photoFrame}>
-              <div className={styles.placeholder}>
-                <span className={styles.placeholderIcon}>🧍</span>
-                <span><img src="/my photo-1.jpeg" alt="My Photo" className={styles.photo} /></span>
-              </div>
+              <img src="/my photo-1.jpeg" alt="My Photo" className={styles.photo} />
               <span className={`${styles.fc} ${styles.tl}`}/>
               <span className={`${styles.fc} ${styles.br}`}/>
               <div className={styles.badge}>

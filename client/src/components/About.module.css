@@ -41,7 +41,7 @@
 
 @media (max-width: 900px) {
   .grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .photoFrame { aspect-ratio: 4/3; }
+  .photoFrame { aspect-ratio: 3/4; max-width: 400px; margin: 0 auto; }
 }
 
 .photo {
