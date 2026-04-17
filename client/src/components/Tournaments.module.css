@@ -1,0 +1,46 @@
+.headerRow {
+  display: grid; grid-template-columns: 60px 1fr 100px 60px 90px;
+  gap: 1.5rem; padding: 0.6rem 1.5rem;
+  font-family: 'Cinzel', serif; font-size: 9px;
+  letter-spacing: 0.18em; color: var(--text-dim);
+  text-transform: uppercase; border-bottom: 1px solid var(--border);
+  margin-bottom: 2px;
+}
+.right { text-align: right; }
+.list { display: flex; flex-direction: column; gap: 2px; }
+.row {
+  display: grid; grid-template-columns: 60px 1fr 100px 60px 90px;
+  gap: 1.5rem; align-items: center;
+  padding: 1.4rem 1.5rem;
+  background: var(--dark-2); border: 1px solid var(--border);
+  transition: border-color 0.2s, background 0.2s;
+  position: relative; overflow: hidden;
+}
+.row::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: transparent; transition: background 0.2s;
+}
+.row:hover { border-color: rgba(201,146,42,0.4); background: var(--dark-3); }
+.row:hover::before { background: var(--gold); }
+.year { font-family: 'Cinzel', serif; font-size: 0.85rem; color: var(--gold); }
+.tName  { font-size: 0.95rem; color: var(--text-main); font-weight: 600; }
+.tPlace { font-size: 0.78rem; color: var(--text-dim); margin-top: 2px; }
+.badge {
+  font-family: 'Cinzel', serif; font-size: 8px; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 3px 10px; border-radius: 2px;
+  display: inline-block;
+}
+.national { background: rgba(201,146,42,0.15); color: var(--gold-light); border: 1px solid rgba(201,146,42,0.3); }
+.state    { background: rgba(155,28,28,0.2);   color: #F08080;           border: 1px solid rgba(155,28,28,0.4); }
+.district { background: rgba(255,255,255,0.04); color: var(--text-muted); border: 1px solid var(--border); }
+.medal { font-size: 1.3rem; text-align: center; }
+.wins { text-align: right; }
+.winsNum  { font-family: 'Cinzel', serif; font-size: 1.5rem; color: var(--gold-light); font-weight: 700; }
+.winsText { font-size: 0.7rem; color: var(--text-dim); display: block; text-transform: uppercase; letter-spacing: 0.08em; }
+.note { margin-top: 1.5rem; font-size: 0.78rem; color: var(--text-dim); font-family: 'Cinzel', serif; letter-spacing: 0.06em; }
+
+@media (max-width: 900px) {
+  .headerRow { display: none; }
+  .row { grid-template-columns: 50px 1fr auto; }
+  .row > :nth-child(3), .row > :nth-child(4) { display: none; }
+}

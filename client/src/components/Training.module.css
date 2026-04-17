@@ -1,0 +1,30 @@
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; }
+.card {
+  background: var(--dark-3); padding: 2.5rem 2rem;
+  border: 1px solid var(--border);
+  position: relative; overflow: hidden;
+  transition: border-color 0.3s, background 0.3s;
+}
+.card:hover { border-color: var(--border-hot); background: var(--dark-4); }
+.bgNum {
+  position: absolute; top: 1rem; right: 1.5rem;
+  font-family: 'Cinzel', serif; font-size: 4.5rem; font-weight: 900;
+  color: rgba(201,146,42,0.06); line-height: 1; pointer-events: none;
+  transition: color 0.3s;
+}
+.card:hover .bgNum { color: rgba(201,146,42,0.11); }
+.icon {
+  width: 48px; height: 48px;
+  border: 1px solid var(--border); border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; margin-bottom: 1.5rem;
+  background: var(--dark-4); transition: border-color 0.3s;
+}
+.card:hover .icon { border-color: var(--gold); }
+.title {
+  font-family: 'Cinzel', serif; font-size: 0.95rem; font-weight: 700;
+  color: var(--gold-light); letter-spacing: 0.05em; margin-bottom: 0.75rem;
+}
+.body { font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; }
+
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }

@@ -1,0 +1,20 @@
+{
+  "name": "silambam-server",
+  "version": "1.0.0",
+  "description": "Silambam Portfolio — Full Stack Server",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev":     "node --watch index.js",
+    "start":   "NODE_ENV=production node index.js",
+    "build":   "cd ../client && npm install && npm run build && cp -r dist ../server/public",
+    "setup":   "npm install && npm run build",
+    "fresh":   "rm -rf public && npm run build"
+  },
+  "dependencies": {
+    "cors":       "^2.8.5",
+    "dotenv":     "^16.4.5",
+    "express":    "^4.19.2",
+    "nodemailer": "^6.9.13"
+  }
+}

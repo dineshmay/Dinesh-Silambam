@@ -1,0 +1,96 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --gold:       #C9922A;
+  --gold-light: #F0C060;
+  --gold-pale:  #F7DFA0;
+  --gold-dark:  #8B6010;
+  --crimson:    #9B1C1C;
+  --dark-bg:    #080604;
+  --dark-2:     #100B06;
+  --dark-3:     #1A1108;
+  --dark-4:     #251809;
+  --dark-5:     #2E1F0C;
+  --text-main:  #F5EDD8;
+  --text-muted: #C0AD88;
+  --text-dim:   #7A6840;
+  --border:     rgba(201,146,42,0.22);
+  --border-hot: rgba(201,146,42,0.55);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--dark-bg);
+  color: var(--text-main);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 18px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  padding-bottom: 58px;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--dark-bg); }
+::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 2px; }
+
+/* ── Shared Section Styles ── */
+.section { padding: 7rem 3rem; }
+.section--alt { background: var(--dark-2); }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+
+.section-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;
+}
+.section-eyebrow span {
+  font-family: 'Cinzel', serif; font-size: 10px;
+  letter-spacing: 0.28em; color: var(--gold); text-transform: uppercase;
+}
+.eyebrow-line { width: 40px; height: 1px; background: var(--gold); flex-shrink: 0; }
+
+h2 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700; color: var(--text-main);
+  line-height: 1.05; letter-spacing: -0.01em;
+}
+h2 em { color: var(--gold); font-style: normal; }
+
+.section-header { margin-bottom: 3.5rem; }
+
+/* ── Buttons ── */
+.btn-fire {
+  font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.15em;
+  text-transform: uppercase; text-decoration: none; display: inline-block;
+  background: linear-gradient(135deg, var(--crimson) 0%, #C0392B 100%);
+  color: var(--text-main); padding: 14px 30px;
+  border: 1px solid rgba(155,28,28,0.8); cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.2s;
+}
+.btn-fire:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(155,28,28,0.4); }
+
+.btn-ghost {
+  font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 0.15em;
+  text-transform: uppercase; text-decoration: none; display: inline-block;
+  background: transparent; color: var(--gold);
+  padding: 13px 30px; border: 1px solid var(--border-hot); cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.btn-ghost:hover { background: rgba(201,146,42,0.1); }
+
+/* ── Particles ── */
+.particle {
+  position: absolute; border-radius: 50%;
+  background: var(--gold); opacity: 0;
+  animation: floatUp linear infinite;
+}
+@keyframes floatUp {
+  0%   { transform: translateY(0) scale(1); opacity: 0; }
+  10%  { opacity: 0.6; }
+  90%  { opacity: 0.15; }
+  100% { transform: translateY(-80vh) scale(0.3); opacity: 0; }
+}
+
+@media (max-width: 900px) {
+  .section { padding: 5rem 1.5rem; }
+}

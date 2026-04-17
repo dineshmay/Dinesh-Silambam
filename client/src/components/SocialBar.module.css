@@ -1,0 +1,33 @@
+.bar {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 300;
+  display: flex; align-items: stretch; height: 58px;
+  box-shadow: 0 -1px 0 rgba(201,146,42,0.25), 0 -8px 32px rgba(0,0,0,0.5);
+}
+.wa {
+  flex: 1; display: flex; align-items: center; justify-content: center; gap: 0.85rem;
+  background: #075E54; text-decoration: none;
+  border-top: 1px solid rgba(37,211,102,0.35);
+  transition: background 0.2s;
+}
+.wa:hover { background: #064d45; }
+.ig {
+  flex: 1; display: flex; align-items: center; justify-content: center; gap: 0.85rem;
+  background: #1a0a14; text-decoration: none;
+  border-top: 1px solid rgba(201,146,42,0.25);
+  position: relative; overflow: hidden;
+  transition: background 0.2s;
+}
+.ig::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(131,58,180,0.18) 0%, rgba(253,29,29,0.12) 50%, rgba(252,176,69,0.1) 100%);
+  pointer-events: none;
+}
+.ig:hover { background: #261020; }
+.divider { width: 1px; background: rgba(201,146,42,0.2); flex-shrink: 0; }
+.icon { width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.icon svg { width: 22px; height: 22px; }
+.text { display: flex; flex-direction: column; position: relative; z-index: 1; }
+.label { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1; margin-bottom: 2px; }
+.value { font-family: 'Crimson Pro', serif; font-size: 0.95rem; font-weight: 600; line-height: 1; color: #fff; }
+.wa .label { color: rgba(37,211,102,0.7); }
+.ig .label { color: var(--gold); }

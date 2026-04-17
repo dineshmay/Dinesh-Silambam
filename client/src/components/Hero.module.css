@@ -1,0 +1,107 @@
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+  padding: 100px 3rem 5rem;
+}
+.radial {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 45%, rgba(155,28,28,0.22) 0%, transparent 65%),
+    radial-gradient(ellipse 35% 35% at 15% 80%, rgba(201,146,42,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 25% 25% at 85% 15%, rgba(201,146,42,0.06) 0%, transparent 60%);
+}
+.particles { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.ring {
+  position: absolute; right: 5%; top: 50%;
+  transform: translateY(-50%);
+  width: 420px; height: 420px;
+  pointer-events: none; opacity: 0.06;
+  animation: spin 60s linear infinite;
+}
+.ring svg { width: 100%; height: 100%; }
+@keyframes spin { to { transform: translateY(-50%) rotate(360deg); } }
+
+.inner {
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: center;
+  max-width: 1200px; width: 100%;
+}
+.eyebrow { display: inline-flex; align-items: center; gap: 0.75rem; margin-bottom: 1.8rem; }
+.eyebrowLine { width: 32px; height: 1px; background: var(--gold); }
+.eyebrowText {
+  font-family: 'Cinzel', serif; font-size: 10px;
+  letter-spacing: 0.28em; color: var(--gold); text-transform: uppercase;
+}
+.h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.8rem, 5.5vw, 5.2rem);
+  font-weight: 900; line-height: 0.92;
+  letter-spacing: -0.02em; margin-bottom: 0.5em;
+  display: flex; flex-direction: column;
+}
+.sub   { color: var(--text-muted); font-size: 0.42em; font-weight: 400; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 0.3em; }
+.name  { color: var(--text-main); }
+.accent{ color: var(--gold); }
+.desc {
+  font-size: 1.1rem; color: var(--text-muted);
+  font-style: italic; font-weight: 300;
+  max-width: 420px; margin-bottom: 2.5rem;
+  border-left: 2px solid var(--crimson);
+  padding-left: 1.25rem; line-height: 1.75;
+}
+.btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* Stat panel */
+.panel {
+  border: 1px solid var(--border);
+  background: rgba(16,11,6,0.75);
+  backdrop-filter: blur(6px);
+  padding: 2.5rem; position: relative;
+}
+.panel::before {
+  content: '';
+  position: absolute; top: -1px; left: 2rem; right: 2rem; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.panelTitle {
+  font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 0.25em;
+  color: var(--gold); text-transform: uppercase; margin-bottom: 2rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.panelTitle::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.statsGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-bottom: 2rem; }
+.statCard {
+  background: var(--dark-3); padding: 1.5rem 1.25rem;
+  text-align: center; border: 1px solid var(--border);
+  transition: border-color 0.3s;
+  position: relative; overflow: hidden;
+}
+.statCard::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--crimson), var(--gold));
+  transform: scaleX(0); transition: transform 0.3s;
+}
+.statCard:hover { border-color: var(--gold); }
+.statCard:hover::after { transform: scaleX(1); }
+.statNum {
+  font-family: 'Cinzel', serif; font-size: 2.5rem; font-weight: 900;
+  color: var(--gold-light); display: block; line-height: 1; margin-bottom: 0.3rem;
+}
+.statLabel {
+  font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.18em;
+  color: var(--text-dim); text-transform: uppercase;
+}
+.origin {
+  text-align: center; padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 1rem; color: var(--text-dim); font-style: italic;
+}
+.origin strong { color: var(--gold); font-style: normal; font-weight: 600; }
+
+@media (max-width: 900px) {
+  .hero { padding: 100px 1.5rem 4rem; }
+  .inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .right { display: none; }
+}

@@ -1,0 +1,21 @@
+.footer {
+  background: var(--dark-2);
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 3rem;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem;
+}
+.logo  { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 0.18em; color: var(--gold); }
+.links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
+.link  {
+  font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.12em;
+  color: var(--text-dim); background: none; border: none;
+  cursor: pointer; text-transform: uppercase; transition: color 0.2s;
+}
+.link:hover { color: var(--gold); }
+.copy  { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 0.12em; color: var(--text-dim); text-transform: uppercase; }
+
+@media (max-width: 900px) {
+  .footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+  .links  { justify-content: center; }
+}
