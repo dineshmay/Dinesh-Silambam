@@ -17,11 +17,10 @@ export default function VideoSection() {
     if (!v) return;
 
     if (v.paused) {
-      v.play();
-      setPlaying(true);
-    } else {
-      v.pause();
-      setPlaying(false);
+      // Explicitly unmute and set volume to max to ensure sound works!
+      v.muted = false;
+      v.volume = 1.0;
+      v.play().catch(e => console.log('Playback prevented:', e));
     }
   };
 
@@ -32,7 +31,7 @@ export default function VideoSection() {
 
           {/* VIDEO PLAYER */}
           <div>
-            <div className={styles.wrap} onClick={handleOverlayClick}>
+            <div className={styles.wrap}>
               
               <video
                 ref={videoRef}
@@ -40,10 +39,14 @@ export default function VideoSection() {
                 src="/my video-1.mp4"   // ✅ Place video in /public folder
                 preload="metadata"
                 playsInline
+                controls={playing} // Show native controls once it starts playing
+                onPlay={() => setPlaying(true)}
+                onPause={() => setPlaying(false)}
+                onEnded={() => setPlaying(false)}
               />
 
               {!playing && (
-                <div className={styles.overlay}>
+                <div className={styles.overlay} onClick={handleOverlayClick}>
                   <div className={styles.playBtn}>
                     <svg viewBox="0 0 24 24">
                       <polygon points="5,3 19,12 5,21"/>
