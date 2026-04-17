@@ -2,7 +2,7 @@ import styles from './Students.module.css';
 
 const students = [
   { image: '/vidya new.jpeg', objectPosition: 'top center ', name:'Vidhyadevi M',  badge:'National Champion 2025',  text:"Started training at college, Vidhya won gold at the National Championship in just 3 years. She now represents Tamil Nadu at the national level." },
-  { image: '/yugan new.jpeg', objectPosition: 'top center ', name:'Yugan S', badge:'State Champion 2025 ', text:"One of my most dedicated student. Yugan broke barriers in Mens's Silambam and secured gold at the district championship two years running." },
+  { image: '/yugan new.jpeg', objectPosition: 'top center ', name:'Yugan S', badge:'State Champion 2025 ', text:"One of my most dedicated student. Yugan broke barriers in Mens's Silambam and secured gold at the district and representing state in just two years running." },
   { image: '/abii.jpeg', objectPosition: 'center ', name:'Abinaya M',  badge:'State Champion 2025',      text:"Zero martial arts background to State-level bronze medal in 2 years. Abi's commitment is an inspiration to every student at the academy." },
 ];
 
